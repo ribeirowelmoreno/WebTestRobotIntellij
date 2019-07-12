@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20190710 15:38:16.678" generator="Robot 3.1.2 (Python 2.7.16 on win32)">
+<robot rpa="false" generated="20190712 15:39:46.924" generator="Robot 3.1.2 (Python 2.7.16 on win32)">
 <suite source="D:\Wellynton\Projetos\RobotIntellij\.idea\Tests\WebTest.robot" id="s1" name="WebTest">
-<test id="s1-t1" name="Test Case 1: Search an existant product">
+<test id="s1-t1" name="Scenario 6: Add e new client">
 <kw type="setup" name="Open Browser" library="WebTestResource">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -9,281 +9,86 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20190710 15:38:16.993" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20190710 15:38:20.495" starttime="20190710 15:38:16.993"></status>
+<msg timestamp="20190712 15:39:47.441" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20190712 15:39:53.160" starttime="20190712 15:39:47.440"></status>
 </kw>
-<status status="PASS" endtime="20190710 15:38:20.495" starttime="20190710 15:38:16.992"></status>
+<status status="PASS" endtime="20190712 15:39:53.160" starttime="20190712 15:39:47.440"></status>
 </kw>
-<kw name="Access home page" library="WebTestResource">
+<kw name="Given I'm in the home page" library="WebTestResource">
 <kw name="Go To" library="Selenium2Library">
 <doc>Navigates the active browser instance to the provided ``url``.</doc>
 <arguments>
 <arg>http://automationpractice.com</arg>
 </arguments>
-<msg timestamp="20190710 15:38:20.496" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" endtime="20190710 15:38:24.775" starttime="20190710 15:38:20.496"></status>
+<msg timestamp="20190712 15:39:53.162" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" endtime="20190712 15:39:56.733" starttime="20190712 15:39:53.162"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20190710 15:38:25.033" starttime="20190710 15:38:24.775"></status>
+<status status="PASS" endtime="20190712 15:39:56.999" starttime="20190712 15:39:56.733"></status>
 </kw>
 <kw name="Title Should Be" library="Selenium2Library">
 <doc>Verifies that current page title equals ``title``.</doc>
 <arguments>
-<arg>My Store</arg>
+<arg>${SITE_TITLE}</arg>
 </arguments>
-<msg timestamp="20190710 15:38:25.037" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20190710 15:38:25.038" starttime="20190710 15:38:25.034"></status>
+<msg timestamp="20190712 15:39:57.006" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20190712 15:39:57.006" starttime="20190712 15:39:57.000"></status>
 </kw>
-<status status="PASS" endtime="20190710 15:38:25.038" starttime="20190710 15:38:20.496"></status>
+<status status="PASS" endtime="20190712 15:39:57.006" starttime="20190712 15:39:53.161"></status>
 </kw>
-<kw name="Write the product name &quot;Blouse&quot; on the search field" library="WebTestResource">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>name=search_query</arg>
-<arg>${PRODUCT}</arg>
-</arguments>
-<msg timestamp="20190710 15:38:25.038" level="INFO">Typing text 'Blouse' into text field 'name=search_query'.</msg>
-<status status="PASS" endtime="20190710 15:38:25.076" starttime="20190710 15:38:25.038"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:25.077" starttime="20190710 15:38:25.038"></status>
-</kw>
-<kw name="Click on the search button" library="WebTestResource">
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>name=submit_search</arg>
-</arguments>
-<msg timestamp="20190710 15:38:25.078" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" endtime="20190710 15:38:26.193" starttime="20190710 15:38:25.078"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:26.193" starttime="20190710 15:38:25.077"></status>
-</kw>
-<kw name="Make sure ir the &quot;Blouse&quot; product was listed on the website" library="WebTestResource">
+<kw name="When I click on sign in button" library="WebTestResource">
 <kw name="Wait Until Element Is Visible" library="Selenium2Library">
 <doc>Waits until element ``locator`` is visible.</doc>
 <arguments>
-<arg>css=.page-heading</arg>
+<arg>xpath=//*[@id="header"]/div[2]//a[@class="login"]</arg>
 </arguments>
-<status status="PASS" endtime="20190710 15:38:26.241" starttime="20190710 15:38:26.194"></status>
-</kw>
-<kw name="Title Should Be" library="Selenium2Library">
-<doc>Verifies that current page title equals ``title``.</doc>
-<arguments>
-<arg>Search - My Store</arg>
-</arguments>
-<msg timestamp="20190710 15:38:26.248" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" endtime="20190710 15:38:26.249" starttime="20190710 15:38:26.241"></status>
-</kw>
-<kw name="Page Should Contain Image" library="Selenium2Library">
-<doc>Verifies image identified by ``locator`` is found from current page.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]//img[@src="http://automationpractice.com/img/p/7/7-home_default.jpg"]</arg>
-</arguments>
-<msg timestamp="20190710 15:38:26.266" level="INFO">Current page contains image 'xpath=//*[@id="center_column"]//img[@src="http://automationpractice.com/img/p/7/7-home_default.jpg"]'.</msg>
-<status status="PASS" endtime="20190710 15:38:26.266" starttime="20190710 15:38:26.249"></status>
-</kw>
-<kw name="Page Should Contain Link" library="Selenium2Library">
-<doc>Verifies link identified by ``locator`` is found from current page.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(), "Blouse")]</arg>
-</arguments>
-<msg timestamp="20190710 15:38:26.278" level="INFO">Current page contains link 'xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(), "Blouse")]'.</msg>
-<status status="PASS" endtime="20190710 15:38:26.278" starttime="20190710 15:38:26.267"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:26.278" starttime="20190710 15:38:26.194"></status>
-</kw>
-<kw type="teardown" name="Close Browser" library="WebTestResource">
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20190710 15:38:27.618" starttime="20190710 15:38:26.279"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:27.618" starttime="20190710 15:38:26.279"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:27.618" critical="yes" starttime="20190710 15:38:16.992"></status>
-</test>
-<test id="s1-t2" name="Test Case 2: Search an non existant product">
-<kw type="setup" name="Open Browser" library="WebTestResource">
-<kw name="Open Browser" library="Selenium2Library">
-<doc>Opens a new browser instance to the given ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20190710 15:38:27.621" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20190710 15:38:30.965" starttime="20190710 15:38:27.621"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:30.965" starttime="20190710 15:38:27.620"></status>
-</kw>
-<kw name="Access home page" library="WebTestResource">
-<kw name="Go To" library="Selenium2Library">
-<doc>Navigates the active browser instance to the provided ``url``.</doc>
-<arguments>
-<arg>http://automationpractice.com</arg>
-</arguments>
-<msg timestamp="20190710 15:38:30.966" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" endtime="20190710 15:38:38.920" starttime="20190710 15:38:30.966"></status>
-</kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20190710 15:38:39.177" starttime="20190710 15:38:38.920"></status>
-</kw>
-<kw name="Title Should Be" library="Selenium2Library">
-<doc>Verifies that current page title equals ``title``.</doc>
-<arguments>
-<arg>My Store</arg>
-</arguments>
-<msg timestamp="20190710 15:38:39.182" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20190710 15:38:39.183" starttime="20190710 15:38:39.177"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:39.183" starttime="20190710 15:38:30.965"></status>
-</kw>
-<kw name="Write the product name &quot;nonExitentItem&quot; on the search field" library="WebTestResource">
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>name=search_query</arg>
-<arg>${PRODUCT}</arg>
-</arguments>
-<msg timestamp="20190710 15:38:39.184" level="INFO">Typing text 'nonExitentItem' into text field 'name=search_query'.</msg>
-<status status="PASS" endtime="20190710 15:38:39.246" starttime="20190710 15:38:39.184"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:39.247" starttime="20190710 15:38:39.183"></status>
-</kw>
-<kw name="Click on the search button" library="WebTestResource">
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>name=submit_search</arg>
-</arguments>
-<msg timestamp="20190710 15:38:39.248" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" endtime="20190710 15:38:41.195" starttime="20190710 15:38:39.248"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:41.196" starttime="20190710 15:38:39.247"></status>
-</kw>
-<kw name="Check error message &quot;No results were found for your search &quot;nonExitentItem&quot;&quot; was displayed" library="WebTestResource">
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]//p[@class="alert alert-warning"]</arg>
-</arguments>
-<status status="PASS" endtime="20190710 15:38:41.238" starttime="20190710 15:38:41.197"></status>
-</kw>
-<kw name="Element Text Should Be" library="Selenium2Library">
-<doc>Verifies that element ``locator`` contains exact text ``expected``.</doc>
-<arguments>
-<arg>xpath=//*[@id="center_column"]//p[@class="alert alert-warning"]</arg>
-<arg>${ERROR_MESSAGE}</arg>
-</arguments>
-<msg timestamp="20190710 15:38:41.239" level="INFO">Verifying element 'xpath=//*[@id="center_column"]//p[@class="alert alert-warning"]' contains exact text 'No results were found for your search "nonExitentItem"'.</msg>
-<status status="PASS" endtime="20190710 15:38:41.270" starttime="20190710 15:38:41.238"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:41.270" starttime="20190710 15:38:41.196"></status>
-</kw>
-<kw type="teardown" name="Close Browser" library="WebTestResource">
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20190710 15:38:42.569" starttime="20190710 15:38:41.271"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:42.569" starttime="20190710 15:38:41.270"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:42.569" critical="yes" starttime="20190710 15:38:27.620"></status>
-</test>
-<test id="s1-t3" name="Scenario 3: Pass the mouse on &quot;Women&quot; category on main menu">
-<kw type="setup" name="Open Browser" library="WebTestResource">
-<kw name="Open Browser" library="Selenium2Library">
-<doc>Opens a new browser instance to the given ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20190710 15:38:42.571" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20190710 15:38:45.968" starttime="20190710 15:38:42.571"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:45.968" starttime="20190710 15:38:42.571"></status>
-</kw>
-<kw name="Access home page" library="WebTestResource">
-<kw name="Go To" library="Selenium2Library">
-<doc>Navigates the active browser instance to the provided ``url``.</doc>
-<arguments>
-<arg>http://automationpractice.com</arg>
-</arguments>
-<msg timestamp="20190710 15:38:45.970" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" endtime="20190710 15:38:49.936" starttime="20190710 15:38:45.970"></status>
-</kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20190710 15:38:50.207" starttime="20190710 15:38:49.937"></status>
-</kw>
-<kw name="Title Should Be" library="Selenium2Library">
-<doc>Verifies that current page title equals ``title``.</doc>
-<arguments>
-<arg>My Store</arg>
-</arguments>
-<msg timestamp="20190710 15:38:50.217" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" endtime="20190710 15:38:50.217" starttime="20190710 15:38:50.207"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:50.217" starttime="20190710 15:38:45.969"></status>
-</kw>
-<kw name="When I pass the mouse on the &quot;Women&quot; category" library="WebTestResource">
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]//a[@title="${CATEGORY_TYPE}"]</arg>
-</arguments>
-<status status="PASS" endtime="20190710 15:38:50.266" starttime="20190710 15:38:50.219"></status>
-</kw>
-<kw name="Mouse Over" library="Selenium2Library">
-<doc>Simulates hovering mouse over the element ``locator``.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]//a[@title="${CATEGORY_TYPE}"]</arg>
-</arguments>
-<msg timestamp="20190710 15:38:50.266" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="block_top_menu"]//a[@title="Women"]'.</msg>
-<status status="PASS" endtime="20190710 15:38:50.555" starttime="20190710 15:38:50.266"></status>
-</kw>
-<status status="PASS" endtime="20190710 15:38:50.555" starttime="20190710 15:38:50.218"></status>
-</kw>
-<kw name="Click in the &quot;Summer Dresses&quot; sub-category" library="WebTestResource">
-<kw name="Wait Until Element Is Visible" library="Selenium2Library">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="block_top_menu"]//a[@title="${CATEGORY_TYPE}"]</arg>
-</arguments>
-<status status="PASS" endtime="20190710 15:38:50.828" starttime="20190710 15:38:50.556"></status>
+<status status="PASS" endtime="20190712 15:39:57.062" starttime="20190712 15:39:57.007"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath=//*[@id="block_top_menu"]//a[@title="${SUB_CATEGORY_TYPE}"]</arg>
+<arg>xpath=//*[@id="header"]/div[2]//a[@class="login"]</arg>
 </arguments>
-<msg timestamp="20190710 15:38:50.829" level="FAIL">Variable '${SUB_CATEGORY_TYPE}' not found. Did you mean:
-    ${CATEGORY_TYPE}</msg>
-<status status="FAIL" endtime="20190710 15:38:50.829" starttime="20190710 15:38:50.828"></status>
+<msg timestamp="20190712 15:39:57.063" level="INFO">Clicking element 'xpath=//*[@id="header"]/div[2]//a[@class="login"]'.</msg>
+<status status="PASS" endtime="20190712 15:39:59.592" starttime="20190712 15:39:57.062"></status>
 </kw>
-<status status="FAIL" endtime="20190710 15:38:50.829" starttime="20190710 15:38:50.556"></status>
+<status status="PASS" endtime="20190712 15:39:59.592" starttime="20190712 15:39:57.006"></status>
 </kw>
-<kw type="teardown" name="Close Browser" library="WebTestResource">
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20190710 15:38:52.185" starttime="20190710 15:38:50.830"></status>
+<kw name="And insert a valid e-mail" library="WebTestResource">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=email_create</arg>
+</arguments>
+<status status="PASS" endtime="20190712 15:39:59.656" starttime="20190712 15:39:59.593"></status>
 </kw>
-<status status="PASS" endtime="20190710 15:38:52.186" starttime="20190710 15:38:50.830"></status>
+<kw name="Create a random e-mail" library="WebTestResource">
+<arguments>
+<arg>${PEOPLE_DATA.first_name}</arg>
+<arg>${PEOPLE_DATA.last_name}</arg>
+</arguments>
+<assign>
+<var>${EMAIL}</var>
+</assign>
+<msg timestamp="20190712 15:39:59.657" level="FAIL">Resolving variable '${PEOPLE_DATA.first_name}' failed: AttributeError: 'unicode' object has no attribute 'first_name'</msg>
+<status status="FAIL" endtime="20190712 15:39:59.657" starttime="20190712 15:39:59.656"></status>
 </kw>
-<status status="FAIL" endtime="20190710 15:38:52.186" critical="yes" starttime="20190710 15:38:42.570">Variable '${SUB_CATEGORY_TYPE}' not found. Did you mean:
-    ${CATEGORY_TYPE}</status>
+<status status="FAIL" endtime="20190712 15:39:59.657" starttime="20190712 15:39:59.592"></status>
+</kw>
+<status status="FAIL" endtime="20190712 15:39:59.657" critical="yes" starttime="20190712 15:39:47.439">Resolving variable '${PEOPLE_DATA.first_name}' failed: AttributeError: 'unicode' object has no attribute 'first_name'</status>
 </test>
-<status status="FAIL" endtime="20190710 15:38:52.188" starttime="20190710 15:38:16.680"></status>
+<status status="FAIL" endtime="20190712 15:39:59.659" starttime="20190712 15:39:46.928"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="2">Critical Tests</stat>
-<stat fail="1" pass="2">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="WebTest" pass="2">WebTest</stat>
+<stat fail="1" id="s1" name="WebTest" pass="0">WebTest</stat>
 </suite>
 </statistics>
 <errors>
