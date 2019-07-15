@@ -7,7 +7,7 @@ ${BROWSER}              firefox
 ${URL}                  http://automationpractice.com
 ${SITE_TITLE}           My Store
 ${ADD_TO_CART_BUTTON}   Add to cart
-${PEOPLE_DATA}          first_name=Jose     last_name=Silva     password=jose2012?01        day_of_birth=10     month_of_birth=8        year_of_birth=1991      address=Rua Aguaçu, 171     city=Campinas       state=16        post_code=34711     country=21      phone_number=19999999999
+&{PEOPLE_DATA}          first_name=Jose     last_name=Silva     password=jose2012?01        day_of_birth=10     month_of_birth=8        year_of_birth=1991      address=Rua Aguaçu, 171     city=Campinas       state=16        postcode=34711     country=21      phone_number=19999999999
 
 *** Keywords ***
 # SETUP e TEARDOWN
@@ -66,6 +66,39 @@ And insert a valid e-mail
   ${EMAIL}     Create a random e-mail      ${PEOPLE_DATA.first_name}        ${PEOPLE_DATA.last_name}
   input text                               id=email_create      ${EMAIL}
 
+And click on "Create new account" button
+  wait until element is visible            id=SubmitCreate
+  click element                            id=SubmitCreate
+
+And fill the required fields
+  wait until element is visible            xpath=//*[@id="noSlide"]/h1[@class="page-heading"]
+  wait until element is visible            xpath=//*[@id="id_gender1"]
+  click element                            xpath=//*[@id="id_gender1"]
+  input text                               id=customer_firstname        ${PEOPLE_DATA.first_name}
+  input text                               id=customer_lastname         ${PEOPLE_DATA.last_name}
+  execute javascript                       window.scrollTo(0,500);
+  input text                               id=passwd                    ${PEOPLE_DATA.password}
+  set focus to element                     id=days
+  select from list by index                id=days                      ${PEOPLE_DATA.day_of_birth}
+  set focus to element                     id=months
+  select from list by index                id=months                    ${PEOPLE_DATA.month_of_birth}
+  set focus to element                     id=years
+  select from list by value                id=years                     ${PEOPLE_DATA.year_of_birth}
+  execute javascript                       window.scrollTo(0,2000);
+  input text                               id=address1                  ${PEOPLE_DATA.address}
+  input text                               id=city                      ${PEOPLE_DATA.city}
+  set focus to element                     id=id_state
+  select from list by index                id=id_state                  ${PEOPLE_DATA.state}
+  input text                               id=postcode                  ${PEOPLE_DATA.postcode}
+  set focus to element                     id=id_country
+  select from list by value                id=id_country                ${PEOPLE_DATA.country}
+  input text                               id=phone_mobile              ${PEOPLE_DATA.phone_number}
+  execute javascript                       window.scrollTo(0,1000);
+
+And submit register
+  wait until element is visible            id=submitAccount
+  click element                            id=submitAccount
+
 
 ###Assertions###
 Then the "${PRODUCT}" product should be listed on the website
@@ -88,4 +121,10 @@ Then the product should be displayed on the cart
 
 Then the recently added product should be deleted
   page should contain element     xpath=//*[@id="center_column"]/p[@class="alert alert-warning"][contains(text(), "Your shopping cart is empty")]
+
+Then the register should be successfully done
+  wait until element is visible   xpath=//*[@id="header"]//a[@title="View my customer account"]
+  element text should be          xpath=//*[@id="center_column"]/p        Welcome to your account. Here you can manage all of your personal information and orders.
+  element text should be          xpath=//*[@id="header"]//a[@title="View my customer account"]     ${PEOPLE_DATA.first_name} ${PEOPLE_DATA.last_name}
+
 

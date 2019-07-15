@@ -2,6 +2,7 @@
 Resource         ../Resources/WebTestResource.robot
 Test Setup       Open Browser
 #Test Teardown    Close Browser
+Library          String
 
 *** Test Cases ***
 #Test Case 1: Search an existant product
@@ -40,7 +41,7 @@ Scenario 6: Add e new client
   Given I'm in the home page
   When I click on sign in button
   And insert a valid e-mail
-#  And click on "Create new account" button
-#  And fill the required fields
-#  And submit register
-#  Then the register should be successfully done
+  And click on "Create new account" button
+  And fill the required fields
+  And submit register
+  Then the register should be successfully done
