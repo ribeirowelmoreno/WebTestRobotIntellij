@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a011d7d-deec-4f43-bb8c-443c9488364c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Resources/WebTestResource.robot" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Resources/WebTestResource.robot" afterDir="false" />
+    <list default="true" id="1a011d7d-deec-4f43-bb8c-443c9488364c" name="Default Changelist" comment="Finalizando os testes de cadastro de usuario">
       <change beforePath="$PROJECT_DIR$/.idea/Tests/WebTest.robot" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Tests/WebTest.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Results/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/Results/log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Results/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Results/output.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Results/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/Results/report.html" afterDir="false" />
@@ -21,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/Tests/WebTest.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="46" selection-start-line="46" selection-end-line="46" selection-end-column="47" />
+            <state relative-caret-position="425">
+              <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
               <folding>
                 <element signature="e#0#154#0" expanded="true" />
               </folding>
@@ -33,10 +31,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/Resources/WebTestResource.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
+            <state relative-caret-position="441">
               <caret line="127" column="126" selection-start-line="127" selection-start-column="126" selection-end-line="127" selection-end-column="126" />
               <folding>
                 <element signature="e#0#62#0" expanded="true" />
@@ -56,8 +54,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.idea/Tests/WebTest.robot" />
         <option value="$PROJECT_DIR$/.idea/Resources/WebTestResource.robot" />
+        <option value="$PROJECT_DIR$/.idea/Tests/WebTest.robot" />
       </list>
     </option>
   </component>
@@ -149,6 +147,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.32936078" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -169,23 +168,27 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finalizando os testes de cadastro de usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizando os testes de cadastro de usuario" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/Tests/WebTest.robot">
+    <entry file="file://$PROJECT_DIR$/.idea/Resources/WebTestResource.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="46" selection-start-line="46" selection-end-line="46" selection-end-column="47" />
+        <state relative-caret-position="441">
+          <caret line="127" column="126" selection-start-line="127" selection-start-column="126" selection-end-line="127" selection-end-column="126" />
           <folding>
-            <element signature="e#0#154#0" expanded="true" />
+            <element signature="e#0#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/Resources/WebTestResource.robot">
+    <entry file="file://$PROJECT_DIR$/.idea/Tests/WebTest.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="127" column="126" selection-start-line="127" selection-start-column="126" selection-end-line="127" selection-end-column="126" />
+        <state relative-caret-position="425">
+          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
-            <element signature="e#0#62#0" expanded="true" />
+            <element signature="e#0#154#0" expanded="true" />
           </folding>
         </state>
       </provider>
